@@ -9,10 +9,11 @@ module.exports = function(grunt) {
     sass: {
       options: { 
         sourcemap: 'none',
+        // includePaths: require('bootstrap').includePaths,
         includePaths: [
-          'node_modules/bootstrap/scss/'
+          './node_modules/bootstrap/scss/',
         ],                      
-        outputStyle: 'compressed'
+        outputStyle: 'expanded'
       },
       dist: {
         files: {
@@ -48,10 +49,10 @@ module.exports = function(grunt) {
         livereload: true,
       },
       css: {
-        files: ['**/*.scss', 'src/views/*.hbs', 'src/partials/*.hbs', 'src/layouts/*.hbs'],
+        files: ['**/*.scss'],
         tasks: ['sass', 'assemble']
       }
-    }
+    },
     // Before generating any new files,
     // remove any previously-created files.
     clean: {
