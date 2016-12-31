@@ -1,15 +1,14 @@
 module.exports = function(grunt) {
   grunt.initConfig({
+    
     // Options, ETC
     pkg: grunt.file.readJSON('package.json'),
-    routes: {
 
-    },
     // Tasks
+    
     sass: {
       options: { 
         sourcemap: 'none',
-        // includePaths: require('bootstrap').includePaths,
         includePaths: [
           './node_modules/bootstrap/scss/',
         ],                      
@@ -21,13 +20,15 @@ module.exports = function(grunt) {
         }
       }
     },
+
     assemble: {
       options: {
+        flatten: true,
         assets: 'dist/assets/',
-        data: '<%= routes %>',
+        data: '',
         layout: 'src/layouts/root_layout.hbs',
         partials: ['src/partials/*.hbs'],
-        flatten: true
+        
       },
       index : {
         files: {
@@ -35,38 +36,47 @@ module.exports = function(grunt) {
         }
       }
     },
+    
     browserSync: {
       bsFiles: {
-        src: 'dist/**/*'
+        src : [
+          'dist/assets/css/*.css',
+          'dist/*.html',
+          'dist/**/*.html',
+        ]
       },
       options: {
         watchTask: true,
         server: './dist'
       }
     },
+    
     watch: {
       options: {
         livereload: true,
       },
+      all: {
+            files: ['src/*.hbs', 'src/layouts/*.hbs', 'src/partials/*.hbs', 'src/views/*.hbs'],
+            tasks: ['clean', 'assemble']
+        },
       css: {
-        files: ['**/*.scss'],
-        tasks: ['sass', 'assemble']
+        files: ['src/sass/**/*.scss'],
+        tasks: ['sass']
       }
     },
-    // Before generating any new files,
-    // remove any previously-created files.
+    
     clean: {
-      example: ['dest/*.{html,md}']
+      example: ['dist/**/*.{html,md}']
     }
+
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-assemble');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default',['sass', 'assemble', 'browserSync', 'watch']);
+  grunt.registerTask('default',['sass', 'clean', 'assemble', 'browserSync', 'watch']);
 }
 
