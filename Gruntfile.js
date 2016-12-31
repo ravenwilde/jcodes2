@@ -9,9 +9,9 @@ module.exports = function(grunt) {
     sass: {
       options: { 
         sourcemap: 'none',
-        // includePaths: [
-        //   'node_modules/bootstrap-sass/assets/stylesheets/bootstrap/'
-        // ],                      
+        includePaths: [
+          'node_modules/bootstrap/scss/'
+        ],                      
         outputStyle: 'compressed'
       },
       dist: {
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
       options: {
         assets: 'dist/assets/',
         data: '<%= routes %>',
-        layout: 'src/layouts/root-layout.hbs',
+        layout: 'src/layouts/root_layout.hbs',
         partials: ['src/partials/*.hbs'],
         flatten: true
       },
@@ -52,10 +52,16 @@ module.exports = function(grunt) {
         tasks: ['sass', 'assemble']
       }
     }
+    // Before generating any new files,
+    // remove any previously-created files.
+    clean: {
+      example: ['dest/*.{html,md}']
+    }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-assemble');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-watch');
