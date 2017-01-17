@@ -2,10 +2,6 @@
   "name": "jennifer.codes.v2",
   "version": "1.0.0",
   "description": "Personal website of Jennifer A. Scroggins",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ravenwilde/jcodes2.git"

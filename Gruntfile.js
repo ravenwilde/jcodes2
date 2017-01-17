@@ -1,9 +1,18 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     
-    // Options, ETC
+    // Options, Config, ETC
     pkg: grunt.file.readJSON('package.json'),
-
+    // site  : grunt.file.readYAML('_config.yml'),
+    config: {
+      src: 'src',
+      dist: 'dist',
+      assets: 'dist/assets',
+    },
+    site: {
+      title: 'Jennifer A. Scroggins',
+      desc: 'Developer & Designer'
+    },
     // Tasks
     
     sass: {
@@ -23,31 +32,49 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
+        
         flatten: true,
-        assets: 'dist/assets/',
+        
+        // Site Vars
+        root: '<%= config.dist %>',
+        assets: '<%= config.assets %>',
+        site: '<%= site %>',
+        
+        // Data
         data: '',
+
+        // Templates
         layout: 'src/layouts/root_layout.hbs',
         partials: ['src/partials/*.hbs'],
         
       },
-      index : {
+      devblog : {
+        options: {
+          layout: 'src/layouts/blog.hbs',
+          engine: 'handlebars'
+        },
         files: {
-          'dist/': ['src/views/*.hbs']
+          '<%= config.dist %>/devblog/': ['src/content/devblog/*.md']
         }
-      }
+      },
+      // pages : {
+      //   files: {
+      //     'dist/': ['src/content/pages/*.hbs']
+      //   }
+      // }
     },
     
     browserSync: {
       bsFiles: {
         src : [
-          'dist/assets/css/*.css',
-          'dist/*.html',
-          'dist/**/*.html',
+          '<%= config.assets %>/css/*.css',
+          '<%= config.dist %>/*.html',
+          '<%= config.dist %>/**/*.html',
         ]
       },
       options: {
         watchTask: true,
-        server: './dist'
+        server: './<%= config.dist %>'
       }
     },
     
@@ -56,7 +83,7 @@ module.exports = function(grunt) {
         livereload: true,
       },
       all: {
-            files: ['src/*.hbs', 'src/layouts/*.hbs', 'src/partials/*.hbs', 'src/views/*.hbs'],
+            files: ['src/*.hbs', 'src/content/**/*.hbs', 'src/layouts/*.hbs', 'src/partials/*.hbs'],
             tasks: ['clean', 'assemble']
         },
       css: {
@@ -66,7 +93,7 @@ module.exports = function(grunt) {
     },
     
     clean: {
-      example: ['dist/**/*.{html,md}']
+      example: ['<%= config.dist %>/**/*.{html,md}']
     }
 
   });

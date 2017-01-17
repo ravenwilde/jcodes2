@@ -9,6 +9,7 @@ Personal website - built with Assemble.io and React with Redux
 		* support for Markdown
 	* Bootstrap:
 		* utilize flexbox - use modernizr.js to detect support
+		* implement postCSS with Auto-Prefixer
 		* use bootstrap's jquery until implementing react
 		* make decision on style and whether to use a bootstrap theme
 
