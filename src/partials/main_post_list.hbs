@@ -1,0 +1,12 @@
+{{#each pages}}
+<article class="post">
+	<header class="post__header">
+		<p class="post__category"><small>{{ data.category }}</small></p>
+		<h1 class="post__title"><a href="{{relative dest this.dest}}">{{ data.postTitle }}</a></h1>
+	</header>
+	<div class="post__excerpt">
+		<p>{{ data.postExcerpt }}</p>
+		<p class="post__excerpt--link"><a href="{{relative dest this.dest}}">Read More</a></p>
+	</div>
+</article>
+{{/each}}

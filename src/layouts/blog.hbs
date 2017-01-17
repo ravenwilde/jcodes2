@@ -1,0 +1,77 @@
+---
+layout: src/layouts/root_layout.hbs
+---
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4">
+    
+      <!-- header: desktop -->
+      <header class="hidden-md-down" id="header--desktop">
+        {{> header_img }}
+        {{> hgroup }}
+        {{> social_links }}
+      </header>
+    
+    </div>
+    <div class="col-lg-6">    
+      
+      <!-- header: tablet -->
+      <header class="hidden-xs-down hidden-lg-up" id="header--tablet">
+        <div class="row">
+          <div class="col col-md-4 push-md-8 flex-last">
+            {{> header_img }}
+          </div>
+          <div class="col col-md-8 pull-md-4 flex-first">
+            {{> hgroup }}
+            {{> social_links }}
+          </div>
+        </div>
+      </header>
+      
+      <div class="row">
+        <div class="card" id="mainContent">
+          
+          <!-- header: mobile -->
+          <header class="hidden-sm-up" id="header--mobile">
+            {{> header_img }}
+            {{> hgroup }}
+            {{> social_links }}
+          </header>
+
+          <section class="content card-block">
+            {{#isnt basename "index"}}
+              <!-- Pagination -->
+              {{!pager pagination modifier="pager-justified"}}
+
+              <!-- Blog Posts -->
+              {{#markdown}}
+                {{> body }}
+              {{/markdown}}
+
+              <!-- Comments -->
+            {{/isnt}}
+
+            {{#is basename "index"}}
+              {{#each pages}}
+                {{#isnt basename "index"}}
+                  <article class="post">
+                    <header class="post__header">
+                      <p class="post__category"><small>{{ data.category }}</small></p>
+                      <h1 class="post__title"><a href="{{relative dest this.dest}}">{{ data.postTitle }}</a></h1>
+                    </header>
+                    <div class="post__excerpt">
+                      <p>{{ data.postExcerpt }}</p>
+                      <p class="post__excerpt--link"><a href="{{relative dest this.dest}}">Read More</a></p>
+                    </div>
+                  </article>
+                {{/isnt}}
+              {{/each}}
+            {{/is}}
+          </section>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>

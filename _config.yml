@@ -1,0 +1,47 @@
+# Build
+
+dest: dist
+assets: assets
+
+
+# Site metadata
+title: Blog
+lead: false
+description: >
+  "Blog description"
+
+# License info
+license:
+  type: MIT License
+  url: ./license/index.html
+
+# URLs
+blog: http://jennifer.codes
+repo: https://github.com/ravenwilde/jcodes2
+download:
+  source: /archive/master.zip
+
+
+# SEO/SEM
+google_analytics: false
+google_site_id:   false
+
+
+# Social
+social:
+  twitter:
+    via: jonschlinkert
+    username: assemble
+  facebook: false
+  gplus: false
+  hn: false
+  google: false
+
+
+# Sharing
+social:
+  twitter: false
+  facebook: false
+  gplus: false
+  hn: false
+  google: false
