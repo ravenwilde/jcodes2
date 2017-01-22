@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       assets: 'dist/assets',
     },
     site: {
-      title: 'Jennifer A. Scroggins',
+      title: 'Jennifer Scroggins',
       desc: 'Developer & Designer'
     },
     // Tasks

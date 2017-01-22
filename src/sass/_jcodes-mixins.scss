@@ -1,0 +1,87 @@
+// Material Design Box Shadows
+
+@mixin material-box-shadow($level, $hover) {
+
+  $shadow-initial: 0;
+  $shadow-hover: 0;
+  
+  @if $level == 1 {
+    $shadow-initial: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  @if $level == 2 {
+    $shadow-initial: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  @if $level == 3 {
+    $shadow-initial: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  @if $level == 4 {
+    $shadow-initial: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  @if $level == 5 {
+    $shadow-initial: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    $shadow-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); // needs own settings
+  }
+
+  // return:
+  box-shadow: $shadow-initial;
+  @if $hover == true {
+      &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s cubic-bezier(.25,.8,.25,1);
+      box-shadow: $shadow-hover;
+      opacity: 0;
+    }  
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}
+
+
+// Responsive Headings - type scale from: http://typecast.com/images/uploads/modernscale.css
+@mixin font-settings($header, $size) {
+  @if map-has-key($header, $size) {
+    @media (min-width: map-get($grid-breakpoints, $size)) {
+      $font-size: map-get(map-get($header, $size), 'font-size');
+      $line-height: map-get(map-get($header, $size), 'line-height');
+      margin-bottom: $headings-margin-bottom;
+      @if $font-size != null {
+        font-size: $font-size;
+      }
+      @if $line-height != null {
+        line-height: $line-height;
+      }
+    }
+  }
+}
+@mixin responsive-headings($headers) {
+  $everything-okay: true;
+  @if type-of($headers) != map {
+    @warn "`#{$headers}` is not a map for `responsive-headings`.";
+    $everything-okay: false;
+  }
+  @if $everything-okay {
+    $iterator: 0;
+    @each $headers, $header in $headers {
+      $iterator: $iterator + 1;
+      h#{$iterator}, .h#{$iterator} { // open sass declaration
+        @include font-settings($header, 'xs');
+        @include font-settings($header, 'md');
+        @include font-settings($header, 'lg');
+      } // close sass declaration
+    } 
+  }  
+}

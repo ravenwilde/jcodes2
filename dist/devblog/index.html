@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <link rel="icon" href="favicon.ico">
-    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
     <title>jennifer.codes</title>
 
     <!-- Core CSS -->
@@ -30,41 +30,44 @@
 </head>
 
 <body>
-    <div class="background-banner"></div>
+    <div class="background-banner">
+        <div class="background-banner__filter"></div>
+    </div>
     
-<div class="container-fluid">
+<div id="mainContainer" class="container-fluid">
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-4">
     
       <!-- header: desktop -->
-      <header class="hidden-md-down" id="header--desktop">
-        <img class="rounded-circle" src="http://placekitten.com/g/200/200">        <hgroup>
-        	<h1>Jennifer A. Scroggins</h1>
+      <header class="hidden-lg-down" id="header--desktop">
+        <img class="img-fluid rounded-circle header-image" src="/assets/img/ProfilePic@2x.png">        <hgroup class="byline-header">
+        	<h1>Jennifer Scroggins</h1>
         	<p>Developer &amp; Designer</p>
         </hgroup>        <ul class="social-links__list">
-        	<li>One</li>
-        	<li>Two</li>
-        	<li>Three</li>
-        	<li>Four</li>
+        	<li>&nbsp;</li>
+        	<li>&nbsp;</li>
+        	<li>&nbsp;</li>
+        	<li>&nbsp;</li>
         </ul>      </header>
     
     </div>
-    <div class="col-lg-6">    
+    <div class="col-xl-6">    
       
       <!-- header: tablet -->
-      <header class="hidden-xs-down hidden-lg-up" id="header--tablet">
+      <header class="hidden-sm-down hidden-xl-up" id="header--tablet">
         <div class="row">
-          <div class="col col-md-4 push-md-8 flex-last">
-            <img class="rounded-circle" src="http://placekitten.com/g/200/200">          </div>
-          <div class="col col-md-8 pull-md-4 flex-first">
-            <hgroup>
-            	<h1>Jennifer A. Scroggins</h1>
+          <div class="col col-lg-4 push-md-8 flex-last">
+            <img class="img-fluid rounded-circle header-image" src="/assets/img/ProfilePic@2x.png">          </div>
+          <div class="col col-lg-8 pull-md-4 flex-first">
+            <hgroup class="byline-header">
+            	<h1>Jennifer Scroggins</h1>
             	<p>Developer &amp; Designer</p>
             </hgroup>            <ul class="social-links__list">
-            	<li>One</li>
-            	<li>Two</li>
-            	<li>Three</li>
-            	<li>Four</li>
+            	<li>&nbsp;</li>
+            	<li>&nbsp;</li>
+            	<li>&nbsp;</li>
+            	<li>&nbsp;</li>
             </ul>          </div>
         </div>
       </header>
@@ -73,45 +76,53 @@
         <div class="card" id="mainContent">
           
           <!-- header: mobile -->
-          <header class="hidden-sm-up" id="header--mobile">
-            <img class="rounded-circle" src="http://placekitten.com/g/200/200">            <hgroup>
-            	<h1>Jennifer A. Scroggins</h1>
+          <header class="hidden-md-up" id="header--mobile">
+            <img class="img-fluid rounded-circle header-image" src="/assets/img/ProfilePic@2x.png">            <hgroup class="byline-header">
+            	<h1>Jennifer Scroggins</h1>
             	<p>Developer &amp; Designer</p>
             </hgroup>            <ul class="social-links__list">
-            	<li>One</li>
-            	<li>Two</li>
-            	<li>Three</li>
-            	<li>Four</li>
+            	<li>&nbsp;</li>
+            	<li>&nbsp;</li>
+            	<li>&nbsp;</li>
+            	<li>&nbsp;</li>
             </ul>          </header>
 
           <section class="content card-block">
 
+
                   <article class="post">
                     <header class="post__header">
-                      <p class="post__category"><small>html</small></p>
                       <h1 class="post__title"><a href="test-post-one.html">Test post One</a></h1>
                     </header>
                     <div class="post__excerpt">
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit tortor eget felis porttitor volutpat. Proin eget tortor risus. Donec rutrum congue leo eget malesuada.</p>
-                      <p class="post__excerpt--link"><a href="test-post-one.html">Read More</a></p>
                     </div>
+                    <div class="post__meta">
+                      <p class="post__category">#html</p>
+                      <p class="post__excerpt--link"><a href="test-post-one.html">Read More</a></p>
+                    </a>
                   </article>
+
+
                   <article class="post">
                     <header class="post__header">
-                      <p class="post__category"><small>javascript</small></p>
                       <h1 class="post__title"><a href="test-post.html">This is a test post</a></h1>
                     </header>
                     <div class="post__excerpt">
                       <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh.</p>
-                      <p class="post__excerpt--link"><a href="test-post.html">Read More</a></p>
                     </div>
+                    <div class="post__meta">
+                      <p class="post__category">#javascript</p>
+                      <p class="post__excerpt--link"><a href="test-post.html">Read More</a></p>
+                    </a>
                   </article>
+
           </section>
 
         </div>
       </div>
     </div>
-    <div class="col-lg-2"></div>
+    <div class="col-xl-1"></div>
   </div>
 </div>
 </body>

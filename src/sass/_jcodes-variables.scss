@@ -45,10 +45,32 @@
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
-$gray-lighter:              #eceeef !default;
+// $gray-lighter:              #eceeef !default;
+$gray-lighter:              #e2e1e0 !default;
 $gray-lightest:             #f7f7f9 !default;
 
-$brand-primary:             #0275d8 !default;
+// Miami Sunset Palette
+$texas-rose: #FFAA5C;
+$new-york-pink: #DA727E;
+$turkish-rose: #AC6C82;
+$smoky: #685C79;
+$blue-bayoux: #455C7B;
+$color-map: (
+    1: $texas-rose,
+  2: $new-york-pink,
+  3: $turkish-rose,
+  4: $smoky,
+  5: $blue-bayoux,
+  6: $texas-rose,
+  7: $new-york-pink,
+  8: $turkish-rose,
+  9: $smoky,
+  10: $blue-bayoux
+);
+
+$graffiti-blue:              #a7bfd7 !default;
+
+$brand-primary:             $smoky !default;
 $brand-success:             #5cb85c !default;
 $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
@@ -60,7 +82,7 @@ $brand-inverse:             $gray-dark !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-flex:               false !default;
+$enable-flex:               true !default;
 $enable-rounded:            true !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
@@ -125,10 +147,11 @@ $link-hover-decoration: underline !default;
 
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  sm: 376px,
+  md: 576px,
+  lg: 768px,
+  xl: 992px,
+  xxl: 1200px
 ) !default;
 @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 
@@ -164,7 +187,8 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont sans-serif !default;
+$font-family-sans-serif-2: 'Raleway', "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
@@ -179,12 +203,38 @@ $font-size-xs:   .75rem !default;
 
 $line-height-base: 1.5 !default;
 
-$font-size-h1: 2.5rem !default;
-$font-size-h2: 2rem !default;
-$font-size-h3: 1.75rem !default;
-$font-size-h4: 1.5rem !default;
-$font-size-h5: 1.25rem !default;
-$font-size-h6: 1rem !default;
+$headers-responsive : (
+  1: (
+    xs: (font-size: 1.5rem, line-height: 1.25),
+    md: (font-size: 2.5rem, line-height: 1.125),
+    lg: (font-size: 3rem, line-height: 1.05)
+    ),
+  2: (
+    xs: (font-size: 1.625rem, line-height: 1.15384615),
+    md: (font-size: 2rem, line-height: 1.25),
+    lg: (font-size: 2.25rem, line-height: 1.25)
+    ),
+  3: (
+    xs: (font-size: 1.375rem, line-height: 1.13636364),
+    md: (font-size: 1.5rem, line-height: 1.25),
+    lg: (font-size: 1.75rem, line-height: 1.25)
+    ),
+  4: (
+    xs: (font-size: 1.125rem, line-height: 1.11111111),
+    md: (font-size: null, line-height: 1.22222222),
+    lg: (font-size: null, line-height: null)
+    ),
+  5: (
+    xs: (font-size: 1.25rem, line-height: null),
+    md: (font-size: 1.25rem, line-height: null),
+    lg: (font-size: 1.25rem, line-height: null)
+    ),
+  6: (
+    xs: (font-size: 1rem, line-height: null),
+    md: (font-size: 1rem, line-height: null),
+    lg: (font-size: 1rem, line-height: null)
+    )
+  );
 
 $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;
@@ -197,7 +247,7 @@ $display3-weight: 300 !default;
 $display4-weight: 300 !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family:   inherit !default;
+$headings-font-family:   $font-family-sans-serif-2 !default;
 $headings-font-weight:   500 !default;
 $headings-line-height:   1.1 !default;
 $headings-color:         inherit !default;
