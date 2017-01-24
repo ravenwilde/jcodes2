@@ -4744,13 +4744,6 @@ body {
   height: 100%;
 }
 
-@media (min-width: 376px) {
-  .background-banner,
-  .background-banner__filter {
-    height: 400px;
-  }
-}
-
 @media (min-width: 576px) {
   .background-banner,
   .background-banner__filter {
@@ -4786,7 +4779,7 @@ body {
   margin-top: 150px;
 }
 
-@media (min-width: 376px) {
+@media (min-width: 576px) {
   #mainContent {
     margin-top: 0;
   }

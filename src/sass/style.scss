@@ -73,9 +73,9 @@ body {
 
 	height: 100%;
 
-	@media (min-width: map-get($grid-breakpoints, sm)) {
-		height: 400px;
-	}
+	// @media (min-width: map-get($grid-breakpoints, sm)) {
+	// 	height: 400px;
+	// }
 	@media (min-width: map-get($grid-breakpoints, md)) {
 		height: 400px;
 	}
@@ -104,11 +104,12 @@ body {
 }
 #mainContent {
 	margin-top: 150px;
-	@media (min-width: map-get($grid-breakpoints, sm)) {
+	@media (min-width: map-get($grid-breakpoints, md)) {
 		margin-top: 0;
 	}
 }
 
+// Blog Header
 #header--mobile {
 	margin-top: -100px;
 	display: flex;
