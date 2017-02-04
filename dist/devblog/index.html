@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Jennifer A. Scroggins">
 
     <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
@@ -36,8 +36,8 @@
     
 <div id="mainContainer" class="container-fluid">
   <div class="row">
-    <div class="col-xl-1"></div>
-    <div class="col-xl-4">
+    <div class="col-xl-1 hidden-lg-down"></div>
+    <div class="col-xl-4 hidden-lg-down">
     
       <!-- header: desktop -->
       <header class="hidden-lg-down" id="header--desktop">
@@ -52,14 +52,12 @@
         </ul>      </header>
     
     </div>
-    <div class="col-xl-6">    
+    <div class="col-lg-12 col-xl-6">    
       
       <!-- header: tablet -->
-      <header class="hidden-sm-down hidden-xl-up" id="header--tablet">
+      <header class="hidden-sm-down hidden-xl-up row" id="header--tablet">
         <div class="row">
-          <div class="col col-lg-4 push-md-8 flex-last">
-            <img class="img-fluid rounded-circle header-image" src="/assets/img/ProfilePic@2x.png">          </div>
-          <div class="col col-lg-8 pull-md-4 flex-first">
+          <div class="col-md-8 header--tablet--left-col">
             <hgroup class="byline-header">
             	<h1>Jennifer Scroggins</h1>
             	<p>Developer &amp; Designer</p>
@@ -69,6 +67,8 @@
             	<li>&nbsp;</li>
             	<li>&nbsp;</li>
             </ul>          </div>
+          <div class="col-md-4 header--tablet--right-col">
+            <img class="img-fluid rounded-circle header-image" src="/assets/img/ProfilePic@2x.png">          </div>
         </div>
       </header>
       
@@ -122,7 +122,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-1"></div>
+    <div class="col-xl-1 hidden-lg-down"></div>
   </div>
 </div>
 </body>

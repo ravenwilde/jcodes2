@@ -1,0 +1,13 @@
+// Main Layout
+body {
+	padding: 0 $spacer-x;
+}
+
+#mainContainer {}
+
+#mainContent {
+	margin-top: 150px;
+	@media (min-width: map-get($grid-breakpoints, md)) {
+		margin-top: 0;
+	}
+}

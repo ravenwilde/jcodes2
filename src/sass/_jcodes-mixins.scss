@@ -31,7 +31,10 @@
   }
 
   // return:
+  position: relative;
+  display: inline-block;
   box-shadow: $shadow-initial;
+  transition: all 0.3s ease-in-out;
   @if $hover == true {
       &::after {
       content: '';

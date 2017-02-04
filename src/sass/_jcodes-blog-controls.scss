@@ -1,0 +1,9 @@
+nav.post__nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.nav-link {
+	text-transform: uppercase;
+	padding: $btn-padding-x $btn-padding-y;
+}

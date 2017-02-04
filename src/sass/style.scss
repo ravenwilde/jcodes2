@@ -7,7 +7,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-$enable-flex: true;
 
 // Core variables and mixins
 @import "jcodes-functions";
@@ -58,167 +57,13 @@ $enable-flex: true;
 // Utility classes
 @import "utilities";
 
-
-// Main Layout
-body {
-	padding: 0 $spacer-x;
-	background-color: $gray-lighter;
-}
-.background-banner,
-.background-banner__filter {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-
-	height: 100%;
-
-	// @media (min-width: map-get($grid-breakpoints, sm)) {
-	// 	height: 400px;
-	// }
-	@media (min-width: map-get($grid-breakpoints, md)) {
-		height: 400px;
-	}
-	@media (min-width: map-get($grid-breakpoints, lg)) {
-		height: 400px;
-	}
-	@media (min-width: map-get($grid-breakpoints, xl)) {
-		height: 400px;
-	}
-}
-.background-banner {
-	// TO-DO: fallback for multiple backgrounds
-	background-image: 
-		// url("/assets/img/tp_solid_diamond_20.png"), 
-		// url("/assets/img/pink-filter.png"),
-		url("/assets/img/mountains.png");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-.background-banner__filter {
-	background-color: rgba($turkish-rose, 0.2);
-}
-
-#mainContainer {
-	// padding-top: 100px;
-}
-#mainContent {
-	margin-top: 150px;
-	@media (min-width: map-get($grid-breakpoints, md)) {
-		margin-top: 0;
-	}
-}
-
-// Blog Header
-#header--mobile {
-	margin-top: -100px;
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: $card-spacer-x;
-    margin-bottom: $card-spacer-x;
-    border-bottom: 1px solid $card-border-color;
-    img {
-    	width: 200px;
-    	height: 200px;
-    	margin-bottom: ($card-spacer-x * 2);
-    }
-    hgroup,
-    h1,
-    p {
-    	text-align: center;
-    }
-    hgroup {
-    	margin-bottom: ($card-spacer-x * 2);
-    }
-}
-#header--tablet {
-	// TO-DO
-	// margin-top: -100px;
-	// display: flex;
- //    flex-direction: column;
- //    align-items: center;
- 	img {
-    	width: 200px;
-    	height: 200px;
-    	margin-bottom: $card-spacer-x;
-    }
-}
-#header--desktop {
-	// TO-DO 
-	// margin-top: -100px;
-	// display: flex;
- //    flex-direction: column;
- //    align-items: center;
-	img {
-    	width: 200px;
-    	height: 200px;
-    	margin-bottom: $card-spacer-x;
-    }
-}
-.header-image {
-	@include material-box-shadow(1, false);
-}
-.byline-header {
-	padding: 0 $card-spacer-y;
-	h1 {
-		text-transform: uppercase;
-	}
-	p {
-		@extend h3;
-		color: transparentize(mix($graffiti-blue, $gray-dark, 0.9), 0.6);
-	}
-}
-.social-links__list {
-	list-style: none;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 100%;
-	padding: 0 ($card-spacer-y * 3);
-	margin-bottom: $card-spacer-x;
-	li {
-		display: inline-block;
-		background-color: lighten($brand-primary, 50%);
-		width: 3em;
-		height: 3em;
-		border-radius: 50%;
-	}
-}
-
-// Blog Articles
-article.post {
-	margin-bottom: ($card-spacer-x * 2);
-	&:last-child {
-		margin-bottom: ($card-spacer-x * 1);
-	}
-}
-
-
-.post__meta {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-.post__category {
-	text-transform: uppercase;
-	color: transparentize(mix($graffiti-blue, $gray-dark, 0.9), 0.6);
-}
-
-.post__excerpt--link {
-	text-transform: uppercase;
-	text-align: right;
-}
-
-nav.post__nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-}
-.nav-link {
-	text-transform: uppercase;
-	padding: $btn-padding-x $btn-padding-y;
-}
+// _jcodes Theme
+@import "jcodes-layout";
+@import "jcodes-background";
+@import "jcodes-header";
+@import "jcodes-social";
+@import "jcodes-blog-articles";
+@import "jcodes-blog-controls";
 
 // Additions to base Bootstrap classes
 .card {

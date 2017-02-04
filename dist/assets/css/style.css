@@ -4732,6 +4732,19 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 
 body {
   padding: 0 1rem;
+}
+
+#mainContent {
+  margin-top: 150px;
+}
+
+@media (min-width: 576px) {
+  #mainContent {
+    margin-top: 0;
+  }
+}
+
+body {
   background-color: #e2e1e0;
 }
 
@@ -4766,23 +4779,11 @@ body {
 }
 
 .background-banner {
-  background-image: url("/assets/img/mountains.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #455C7B;
 }
 
 .background-banner__filter {
   background-color: rgba(172, 108, 130, 0.2);
-}
-
-#mainContent {
-  margin-top: 150px;
-}
-
-@media (min-width: 576px) {
-  #mainContent {
-    margin-top: 0;
-  }
 }
 
 #header--mobile {
@@ -4808,13 +4809,57 @@ body {
 }
 
 #header--mobile hgroup {
+  padding: 0 1.5rem;
   margin-bottom: 2.5rem;
 }
 
-#header--tablet img {
-  width: 200px;
-  height: 200px;
+#header--mobile .social-links__list {
+  padding: 0 1.5rem;
   margin-bottom: 1.25rem;
+}
+
+#header--tablet {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#header--tablet .header--tablet--left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0.75rem;
+}
+
+#header--tablet .header--tablet--right-col {
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+}
+
+#header--tablet h1, #header--tablet p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#header--tablet h1 {
+  color: #ffffff;
+  font-size: 2.25em;
+}
+
+@media (min-width: 768px) {
+  #header--tablet h1 {
+    font-size: 2.5em;
+  }
+}
+
+#header--tablet p {
+  color: #f7f7f9;
+}
+
+#header--tablet hgroup {
+  padding-left: 1.5rem;
+}
+
+#header--tablet .social-links__list {
+  padding: 0 0.75rem 0 1.5rem;
 }
 
 #header--desktop img {
@@ -4824,11 +4869,10 @@ body {
 }
 
 .header-image {
+  position: relative;
+  display: inline-block;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.byline-header {
-  padding: 0 0.75rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .byline-header h1 {
@@ -4845,8 +4889,6 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  padding: 0 2.25rem;
-  margin-bottom: 1.25rem;
 }
 
 .social-links__list li {
@@ -4893,5 +4935,8 @@ nav.post__nav {
 }
 
 .card {
+  position: relative;
+  display: inline-block;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s ease-in-out;
 }
