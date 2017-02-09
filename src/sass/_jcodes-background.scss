@@ -20,7 +20,7 @@ body {
 		height: 400px;
 	}
 	@media (min-width: map-get($grid-breakpoints, xl)) {
-		height: 400px;
+		height: 200px;
 	}
 }
 .background-banner {
@@ -32,6 +32,7 @@ body {
 		// url("/assets/img/mountains.png");
 	// background-size: cover;
 	// background-repeat: no-repeat;
+	
 }
 .background-banner__filter {
 	background-color: rgba($turkish-rose, 0.2);

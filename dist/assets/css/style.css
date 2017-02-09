@@ -538,24 +538,6 @@ html {
   }
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 992px) {
-  html {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 1200px) {
-  html {
-    font-size: 24px;
-  }
-}
-
 body {
   font-size: 100%;
 }
@@ -564,7 +546,7 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
   font-size-adjust: 0.5;
 }
 
-#page {
+#mainContainer {
   font-size: 1em;
   /* equivalent to 16px */
   line-height: 1.25;
@@ -572,7 +554,7 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
 }
 
 @media (min-width: 43.75em) {
-  #page {
+  #mainContainer {
     font-size: 1em;
     /* equivalent to 16px */
     line-height: 1.375;
@@ -4734,6 +4716,22 @@ body {
   padding: 0 1rem;
 }
 
+@media (min-width: 992px) {
+  body {
+    padding: 0 2rem;
+  }
+}
+
+#mainContainer {
+  max-width: 1300px;
+}
+
+@media (min-width: 992px) {
+  #mainContainer {
+    margin-top: 100px;
+  }
+}
+
 #mainContent {
   margin-top: 150px;
 }
@@ -4774,7 +4772,7 @@ body {
 @media (min-width: 992px) {
   .background-banner,
   .background-banner__filter {
-    height: 400px;
+    height: 200px;
   }
 }
 
@@ -4862,10 +4860,30 @@ body {
   padding: 0 0.75rem 0 1.5rem;
 }
 
+#header--desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
 #header--desktop img {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 1.25rem;
+  max-width: 200px;
+  max-height: 200px;
+  margin-bottom: 2rem;
+}
+
+#header--desktop h1 {
+  font-size: 2.25em;
+}
+
+#header--desktop p {
+  font-size: 1.5em;
+}
+
+#header--desktop .social-links__list {
+  padding: 0;
 }
 
 .header-image {

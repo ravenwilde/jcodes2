@@ -20,6 +20,7 @@ module.exports = function(grunt) {
         sourcemap: 'none',
         includePaths: [
           './node_modules/bootstrap/scss/',
+          './node_modules/typi/scss/',
         ],                      
         outputStyle: 'expanded'
       },

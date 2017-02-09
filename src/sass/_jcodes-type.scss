@@ -18,19 +18,19 @@ html {
 
 @include media-breakpoint-up(lg) {
   html {
-    font-size: 20px;
+    // font-size: 20px;
   }
 }
 
 @include media-breakpoint-up(xl) {
   html {
-    font-size: 22px;
+    // font-size: 22px;
   }
 }
 
 @include media-breakpoint-up(xxl) {
   html {
-    font-size: 24px;
+    // font-size: 24px;
   }
 }
 
@@ -42,7 +42,7 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
   font-size-adjust: 0.5;
 }
 
-#page {
+#mainContainer {
   font-size: 1em;
   /* equivalent to 16px */
   line-height: 1.25;
@@ -50,7 +50,7 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2
 }
 
 @media (min-width: 43.75em) { // 700px - md
-  #page {
+  #mainContainer {
     font-size: 1em;
     /* equivalent to 16px */
     line-height: 1.375;
