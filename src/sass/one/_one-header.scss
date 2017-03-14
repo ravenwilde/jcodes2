@@ -1,0 +1,11 @@
+#header--tablet {
+	h1, p {
+        text-shadow: $carousel-text-shadow;
+    }
+    h1 {
+        color: $white;
+    }
+    p {
+        color: $gray-lightest;
+    }
+}

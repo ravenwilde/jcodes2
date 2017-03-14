@@ -57,7 +57,7 @@ $turkish-rose: #AC6C82;
 $smoky: #685C79;
 $blue-bayoux: #455C7B;
 $color-map: (
-    1: $texas-rose,
+  1: $texas-rose,
   2: $new-york-pink,
   3: $turkish-rose,
   4: $smoky,
@@ -188,7 +188,8 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont sans-serif !default;
+// $font-family-sans-serif: Roboto, "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont sans-serif !default;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont sans-serif !default;
 $font-family-sans-serif-2: 'Raleway', "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont sans-serif !default;
 $font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
@@ -197,43 +198,50 @@ $font-family-base:       $font-family-sans-serif !default;
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root: 16px !default;
 
+// Modular Scale
+$ms-base: 1em;
+$ms-ratio: $minor-third, $major-third;
+@debug ms-list(0, 6, $ms-base, $ms-ratio);
+
 $font-size-base: 1rem !default;
 $font-size-lg:   1.25rem !default;
 $font-size-sm:   .875rem !default;
 $font-size-xs:   .75rem !default;
 
-$line-height-base: 1.5 !default;
+$line-height-base: 1.44 !default;
+
+// 1em 1.2em 1.44em 1.728em 2.0736em 2.48832em 2.98598em
 
 $headers-responsive : (
   1: (
-    xs: (font-size: 1.5rem, line-height: 1.25),
-    md: (font-size: 2.5rem, line-height: 1.125),
-    lg: (font-size: 3rem, line-height: 1.05)
+    xs: (font-size: ms(4), line-height: 1.44), // 24 / 16 = 1.5
+    md: (font-size: ms(7), line-height: 1.5625), // 40 / 19.2 = 2.08
+    lg: (font-size: ms(9), line-height: 1.5625) // 48 / 19.2 = 2.5
     ),
   2: (
-    xs: (font-size: 1.625rem, line-height: 1.15384615),
-    md: (font-size: 2rem, line-height: 1.25),
-    lg: (font-size: 2.25rem, line-height: 1.25)
+    xs: (font-size: ms(4), line-height: 1.44), // 26 / 16 = 1.625
+    md: (font-size: ms(4), line-height: 1.5625), // 32 / 19.2 = 1.66
+    lg: (font-size: ms(5), line-height: 1.5625) // 36 / 19.2 = 1.875
     ),
   3: (
-    xs: (font-size: 1.375rem, line-height: 1.13636364),
-    md: (font-size: 1.5rem, line-height: 1.25),
-    lg: (font-size: 1.75rem, line-height: 1.25)
+    xs: (font-size: ms(3), line-height: 1.44), // 22 / 16 = 1.375
+    md: (font-size: ms(2), line-height: 1.5625), // 24 / 19.2 = 1.25
+    lg: (font-size: ms(3), line-height: 1.5625) // 28 / 19.2 = 1.458
     ),
   4: (
-    xs: (font-size: 1.125rem, line-height: 1.11111111),
-    md: (font-size: null, line-height: 1.22222222),
+    xs: (font-size: ms(1), line-height: 1.44), // 18 / 16 = 1.125
+    md: (font-size: null, line-height: 1.5625), 
     lg: (font-size: null, line-height: null)
     ),
   5: (
-    xs: (font-size: 1.25rem, line-height: null),
-    md: (font-size: 1.25rem, line-height: null),
-    lg: (font-size: 1.25rem, line-height: null)
+    xs: (font-size: ms(1), line-height: null), // 20 / 16 = 1.25
+    md: (font-size: ms(1), line-height: null), // 20 / 19.2 = 1.04
+    lg: (font-size: ms(1), line-height: null) // 20 / 19.2 = 1.04
     ),
   6: (
-    xs: (font-size: 1rem, line-height: null),
-    md: (font-size: 1rem, line-height: null),
-    lg: (font-size: 1rem, line-height: null)
+    xs: (font-size: ms(0), line-height: null),
+    md: (font-size: ms(0), line-height: null),
+    lg: (font-size: ms(0), line-height: null)
     )
   );
 
@@ -247,9 +255,9 @@ $display2-weight: 300 !default;
 $display3-weight: 300 !default;
 $display4-weight: 300 !default;
 
-$headings-margin-bottom: ($spacer / 2) !default;
+$headings-margin-bottom: ms(0) !default;
 $headings-font-family:   $font-family-sans-serif-2 !default;
-$headings-font-weight:   500 !default;
+$headings-font-weight:   900 !default;
 $headings-line-height:   1.1 !default;
 $headings-color:         inherit !default;
 

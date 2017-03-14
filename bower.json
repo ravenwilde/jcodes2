@@ -1,0 +1,27 @@
+{
+  "name": "jennifer.codes.v2",
+  "description": "Personal website of Jennifer A. Scroggins",
+  "main": "",
+  "authors": [
+    "Jennifer A. Scroggins"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "npm",
+    "grunt",
+    "assemble"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modular-scale": "^2.1.3"
+  }
+}

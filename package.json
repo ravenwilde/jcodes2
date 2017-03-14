@@ -27,7 +27,6 @@
     "grunt-contrib-clean": "^1.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
-    "typi": "^3.0.0-alpha.1"
+    "bootstrap": "^4.0.0-alpha.5"
   }
 }

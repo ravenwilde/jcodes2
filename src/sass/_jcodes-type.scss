@@ -1,62 +1,43 @@
-// TO-DO: Base Responsive Font Size
+//
+// Base Font Sizes
+//
 
-html {
-  font-size: 16px;
+html,
+body {
+  font-size:100%;
+  line-height: $line-height-base;
 }
 
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 16px;
-  }
-}
+// @include media-breakpoint-up(sm) {
+//   html {
+//     font-size: 16px;
+//   }
+// }
 
 @include media-breakpoint-up(md) {
-  html {
-    font-size: 18px;
+  html,
+  body {
+    font-size: ms(1);
   }
 }
 
-@include media-breakpoint-up(lg) {
-  html {
-    // font-size: 20px;
-  }
-}
+// @include media-breakpoint-up(lg) {
+//   html {
+//     font-size: 20px;
+//   }
+// }
 
-@include media-breakpoint-up(xl) {
-  html {
-    // font-size: 22px;
-  }
-}
+// @include media-breakpoint-up(xl) {
+//   html {
+//     font-size: 22px;
+//   }
+// }
 
-@include media-breakpoint-up(xxl) {
-  html {
-    // font-size: 24px;
-  }
-}
-
-body {
-  font-size: 100%;
-}
-
-body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {
-  font-size-adjust: 0.5;
-}
-
-#mainContainer {
-  font-size: 1em;
-  /* equivalent to 16px */
-  line-height: 1.25;
-  /* equivalent to 20px */
-}
-
-@media (min-width: 43.75em) { // 700px - md
-  #mainContainer {
-    font-size: 1em;
-    /* equivalent to 16px */
-    line-height: 1.375;
-    /* equivalent to 22px */
-  }
-}
+// @include media-breakpoint-up(xxl) {
+//   html {
+//     font-size: 24px;
+//   }
+// }
 
 //
 // Headings

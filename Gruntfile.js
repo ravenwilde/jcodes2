@@ -17,10 +17,10 @@ module.exports = function(grunt) {
     
     sass: {
       options: { 
-        sourcemap: 'none',
+        sourcemap: true,
         includePaths: [
           './node_modules/bootstrap/scss/',
-          './node_modules/typi/scss/',
+          './bower_components/modular-scale/stylesheets/',
         ],                      
         outputStyle: 'expanded'
       },

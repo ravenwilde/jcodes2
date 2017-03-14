@@ -9,10 +9,12 @@
 
 
 // Core variables and mixins
+@import "modular-scale";
 @import "jcodes-functions";
 @import "jcodes-variables";
 @import "jcodes-mixins";
 @import "mixins";
+
 
 // Reset and dependencies
 @import "normalize";
@@ -59,16 +61,15 @@
 
 // _jcodes Theme
 @import "jcodes-layout";
-@import "jcodes-background";
 @import "jcodes-header";
 @import "jcodes-social";
 @import "jcodes-blog-articles";
 @import "jcodes-blog-controls";
+@import "jcodes-bootstrap-overrides";
+// _one
+// @import "one/one";
 
-// Additions to base Bootstrap classes
-.card {
-	@include material-box-shadow(1, false);
-}
+
 
 
 
