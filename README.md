@@ -1,5 +1,5 @@
 # jcodes2
-Personal website - built with Assemble.io and React with Redux
+Personal website - built with Assemble.io
 
 ## Roadmap - as of 12/31/16
 

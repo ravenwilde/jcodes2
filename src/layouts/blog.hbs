@@ -29,7 +29,7 @@ layout: src/layouts/root_layout.hbs
       </header>
       
       <div class="row">
-        <div class="card col-xs-12" id="mainContent">
+        <div class="col-xs-12" id="mainContent">
           
           <!-- header: mobile -->
           <header class="hidden-md-up" id="header--mobile">
@@ -38,7 +38,7 @@ layout: src/layouts/root_layout.hbs
             {{> social_links }}
           </header>
 
-          <section class="content card-block">
+          <section class="content">
             {{#isnt basename "index"}}
               <!-- Pagination -->
               {{!pager pagination modifier="pager-justified"}}
